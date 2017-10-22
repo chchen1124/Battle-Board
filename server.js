@@ -4,8 +4,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8081;
 const app = express();
+
+// Import routes and give server access
+
+var routes = require("./controllers/battles_controller.js");
+
+app.use("/", routes);
 
 // grabbing our test model
 const Test = require("./models/test");
