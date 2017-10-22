@@ -27,44 +27,43 @@ app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/myDatabase",
-  {
-    useMongoClient: true
-  }
+    process.env.MONGODB_URI || "mongodb://localhost/myDatabase", {
+        useMongoClient: true
+    }
 );
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+    app.use(express.static("client/build"));
 }
 
 // just a dummy GET route on our Test model
-app.get("/data", (req,res) => {
-  Test.find((err, data) => { 
-    if(err) throw err; 
-    res.json(data);
-  });
+app.get("/data", (req, res) => {
+    Test.find((err, data) => {
+        if (err) throw err;
+        res.json(data);
+    });
 });
 
 // just a post on our Test model
 app.post("/new", (req, res) => {
-  const test = new Test(req.body);
-  test.save(req.body, (err, data) => {
-    if(err) throw err;    
-    res.json(data);
-  });
+    const test = new Test(req.body);
+    test.save(req.body, (err, data) => {
+        if (err) throw err;
+        res.json(data);
+    });
 });
 
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
-  if ( process.env.NODE_ENV === "production" ) {
-    res.sendFile(__dirname + "./client/build/index.html");
-  } else {
-    res.sendFile(__dirname + "./client/public/index.html");
-  }
+    if (process.env.NODE_ENV === "production") {
+        res.sendFile(__dirname + "./client/build/index.html");
+    } else {
+        res.sendFile(__dirname + "./client/public/index.html");
+    }
 });
 
 app.listen(PORT, () => {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+    console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
