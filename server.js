@@ -7,11 +7,16 @@ const logger = require("morgan");
 const PORT = process.env.PORT || 8081;
 const app = express();
 
+// bring in the models
+var db = require("./models");
+
 // Import routes and give server access
 
 var routes = require("./controllers/battles_controller.js");
 
 app.use("/", routes);
+app.use("/update", routes);
+app.use("/create", routes);
 
 // grabbing our test model
 const Test = require("./models/test");
