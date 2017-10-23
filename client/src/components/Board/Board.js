@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "./Board.css";
-import TopNav from "../TopNav";
 import Character from "../Character/Character.js";
 
 class Board extends Component {
@@ -36,7 +35,6 @@ class Board extends Component {
 	render() {
 		return (
 			<div>
-				<TopNav />			
 				<div className="Board">
 					<div className="container">
 						<div className = "row">

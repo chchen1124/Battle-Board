@@ -5,6 +5,7 @@ import Home from './Home/Home.js'
 // import CharacterCreation from './CharacterCreation'
 // import GameCreation from "./GameCreation"
 import Board from "./Board/Board.js"
+import LogReg from "./LogReg/LogReg.js"
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -12,11 +13,12 @@ import Board from "./Board/Board.js"
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
 const Main = () => (
-    <Switch>
+	<Switch>
 		<Route exact path='/' component={Home}/>
 		{/* <Route path="/character" component={CharacterCreation}/>
 		<Route path="/game" component={GameCreation}/> */}
 		<Route path="/board" component={Board}/>
+		<Route path="/LogReg" component={LogReg}/>
     </Switch>
 )
 

@@ -17,6 +17,8 @@ const TopNav = () => (
 					<Link to='/'><a>Home</a></Link>
 		 			&nbsp; | &nbsp;
 		 			<Link to="/board"><a>Board</a></Link>
+					&nbsp; | &nbsp;
+					<Link to="/LogReg"><a>Log/Register</a></Link>
 				</div>
 			</div>
 		</div>
