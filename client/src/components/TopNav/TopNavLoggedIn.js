@@ -19,6 +19,8 @@ const TopNav = () => (
 		 			<Link to="/game"><a>Game</a></Link>
 		 			&nbsp; | &nbsp;
 		 			<Link to="/board"><a>Board</a></Link>
+					&nbsp; | &nbsp;
+					<Link to="/LogReg"><a>Log/Register</a></Link>
 				</div>
 			</div>
 		</div>
