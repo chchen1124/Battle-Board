@@ -21,18 +21,18 @@ mongoose.Promise = global.Promise;
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/battleboard",
   {
-    useMongoClient: true
+	useMongoClient: true
   }
 );
 
 let mdb = mongoose.connection;
 
 mdb.on("error", function(error) {
-    console.log("mongoose Error: ", error);
+	console.log("mongoose Error: ", error);
 });
 
 mdb.once("open", function() {
-    console.log("Mongoose connection successful");
+	console.log("Mongoose connection successful");
 });
 
 const GameState = require("./models/GameState.js");
@@ -56,9 +56,9 @@ const GameState = require("./models/GameState.js");
 // Set up Sequelize
 const sdb = require("./models");
 sdb.sequelize.sync().then(function() {
-    console.log("Sequelize Connected!");
+	console.log("Sequelize Connected!");
 }).catch(function(err) {
-    console.error("Something went wrong with Sequelize: ", err);
+	console.error("Something went wrong with Sequelize: ", err);
 });
 
 
@@ -70,22 +70,18 @@ if (process.env.NODE_ENV === "production") {
 
 const Board = require("./models/board.js");
 app.get("/games", (req, res) => {
-    Board.find((err, data) => {
-        if (err) throw err;
-        {
-            console.log(data);
-            res.json(data);
-        }
-    });
+	sdb.Board.findAll().then(data => {
+		res.json(data);
+	});
 });
-
+		
 // just a dummy GET route on our Test model
 app.get("/data", (req,res) => {
   Test.find((err, data) => { 
-    if(err) throw err; {
-        console.log(data);
-        res.json(data);
-    }
+	if(err) throw err; {
+		console.log(data);
+		res.json(data);
+	}
   });
 });
 
@@ -93,8 +89,8 @@ app.get("/data", (req,res) => {
 app.post("/new", (req, res) => {
   const test = new Test(req.body);
   test.save(req.body, (err, data) => {
-    if(err) throw err;    
-    res.json(data);
+	if(err) throw err;    
+	res.json(data);
   });
 });
 
@@ -107,9 +103,9 @@ app.get("/healthcheck", function(req,res){
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   if ( process.env.NODE_ENV === "production" ) {
-    res.sendFile(__dirname + "./client/build/index.html");
+	res.sendFile(__dirname + "./client/build/index.html");
   } else {
-    res.sendFile(__dirname + "./client/public/index.html");
+	res.sendFile(__dirname + "./client/public/index.html");
   }
 });
 
