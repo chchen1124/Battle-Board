@@ -17,9 +17,9 @@ class Game extends Component {
 	  this.handleBattle = this.handleBattle.bind(this);
 	}
 	
-	componentDidMount() {
-		this.searchGames();
-	}
+	// componentDidMount() {
+	// 	this.searchGames();
+	// }
   
     handleChange(event) {
       this.setState({value: event.target.value});
