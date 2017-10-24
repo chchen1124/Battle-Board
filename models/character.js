@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        character_id: {
+        character_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
