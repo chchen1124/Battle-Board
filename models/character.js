@@ -11,7 +11,7 @@ module.exports = function(sequelize, Sequelize) {
         character_name: {
             type: Sequelize.STRING,
             unique: true
-        }, 
+        },
         avatar: {
             type: Sequelize.STRING,
             defaultValue: "1.jpg"
