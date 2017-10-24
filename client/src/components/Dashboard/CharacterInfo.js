@@ -43,12 +43,13 @@ class Game extends Component {
 			<TopNav />
 			<div className="container">
 				<div className="row">
-					<div className = "col-sm-12 col-md-4 col-md-offset-1">
+					<div className = "col-sm-12 col-md-6 col-md-offset-3 gameForm">
 						<div className="panel panel-default">
 							<div className="panel-body">
 								<form>
 									<label>
-										Your Characters:
+										Create New Game:
+										<input size="100%" type="text" value={this.state.value} onChange={this.handleChange} />
 									</label>
 									<Button />
 									<button onClick={this.handleBuild} className="btn btn-primary pull-left" type="submit" value="Build and Return"><span className="buttonText">Build and Return</span></button>
