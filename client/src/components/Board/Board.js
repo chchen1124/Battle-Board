@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Board.css";
+import TopNav from "../TopNav/TopNavLoggedIn";
 import Character from "../Character/Character.js";
 import TopNav from "../TopNav";
 
