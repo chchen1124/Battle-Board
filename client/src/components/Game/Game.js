@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Game.css";
 import TopNav from "../TopNav/TopNavLoggedIn";
 import API from "../../utils/API.js";
+import Button from "./Button.js";
+
 
 class Game extends Component {
     constructor(props) {
@@ -22,17 +24,17 @@ class Game extends Component {
 	// }
   
     handleChange(event) {
-      this.setState({value: event.target.value});
+		this.setState({value: event.target.value});
     }
   
     handleBuild(event) {
-      console.log('Name submitted: ' + this.state.value);
-      event.preventDefault();
+		event.preventDefault();
+		console.log('Name submitted: ' + this.state.value);
 	}
 	
 	handleBattle(event) {
-		console.log("Battle for", this.state.value);
 		event.preventDefault();
+		console.log("Battle for", this.state.value);
 	}
   
     render() {
@@ -49,6 +51,7 @@ class Game extends Component {
 										Create New Game:
 										<input size="100%" type="text" value={this.state.value} onChange={this.handleChange} />
 									</label>
+									<Button />
 									<button onClick={this.handleBuild} className="btn btn-primary pull-left" type="submit" value="Build and Return"><span className="buttonText">Build and Return</span></button>
 									<button onClick={this.handleBattle} className="btn btn-primary pull-right" type="submit" value="Build and Battle"><span className="buttonText">Build and Battle</span></button>
 								</form>
