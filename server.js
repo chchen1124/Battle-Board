@@ -75,10 +75,22 @@ app.get("/games", (req, res) => {
     });
 });
 
+const boardsController = require("./controllers/boards_controller.js");
 const charactersController = require("./controllers/characters_controller.js");
+const gamesController = require("./controllers/games_controller.js");
+const usersController = require("./controllers/users_controller.js");
 
-// for all the character routes
+// for all the boards routes
+app.use("/boards", boardsController);
+
+// for all the characters routes
 app.use("/characters", charactersController);
+
+// for all the games routes
+app.use("/games", gamesController);
+
+// for all the users routes
+app.use("/users", usersController);
 
 
 
