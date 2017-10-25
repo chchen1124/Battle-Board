@@ -21,9 +21,7 @@ class CharacterInfo extends Component {
 	}
 
 	
-	// componentDidMount() {
-	// 	this.searchGames();
-	// }
+
 
 		// Do a search for articles based on subject, start date, and end date
 	createCharacter = (charName, initBonus, dexterity, hitPoints, conditions) => {
@@ -70,6 +68,12 @@ class CharacterInfo extends Component {
 		window.location = "/dashboard";
 	};
 
+	createCharacter = event => {
+		event.preventDefault();
+		alert("Redirecting to 'Create Character' page...");
+		window.location = "/createCharacter";
+	}
+
     render() {
       return (
         <div>
@@ -91,7 +95,7 @@ class CharacterInfo extends Component {
 								<form>
 									<label>
 										Create New Game:
-										<input size="100%" type="text" value={this.state.value} onChange={this.handleChange} />
+										<input size="100%" type="text" value={this.state.value} onChange={this.handleChange} onClick={this.createCharacter} />
 									</label>
 								</form>
 
