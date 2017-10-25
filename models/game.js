@@ -2,19 +2,25 @@
 
 module.exports = function(sequelize, Sequelize) {
     const Game = sequelize.define("Game", {
+        game_id: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         game_name: {
             type: Sequelize.STRING,
             unique: true
         }
     });
 
-    Character.associate = function(models) {
-        Character.belongsTo(models.UserCreate, {
+    Game.associate = function(models) {
+        Game.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
     }
 
-    return Character;
+    return Game;
 }

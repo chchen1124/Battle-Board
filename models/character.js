@@ -2,10 +2,16 @@
 
 module.exports = function(sequelize, Sequelize) {
     const Character = sequelize.define("Character", {
+        character_id: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         character_name: {
             type: Sequelize.STRING,
             unique: true
-        }, 
+        },
         avatar: {
             type: Sequelize.STRING,
             defaultValue: "1.jpg"
@@ -25,11 +31,16 @@ module.exports = function(sequelize, Sequelize) {
         conditions: {
             type: Sequelize.STRING,
             allowNull: true
+        },
+        isCharacter: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     });
 
     Character.associate = function(models) {
-        Character.belongsTo(models.UserCreate, {
+        Character.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
