@@ -4,9 +4,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './Home/Home.js'
 // import CharacterCreation from './CharacterCreation'
-import Game from "./Game/Game.js"
-import Board from "./Board/Board.js"
-import LogReg from "./LogReg/LogReg.js"
+import Game from "./Game/Game.js";
+import Board from "./Board/Board.js";
+import LogReg from "./LogReg/LogReg.js";
+import Dashboard from "./Dashboard/Dashboard.js";
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -20,6 +21,7 @@ const Main = () => (
 		<Route path="/game" component={Game}/>
 		<Route path="/board" component={Board}/>
 		<Route path="/LogReg" component={LogReg}/>
+		<Route path="/dashboard" component={Dashboard}/>
     </Switch>
 )
 
