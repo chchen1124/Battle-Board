@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopNav from "../TopNav";
+import TopNav from "../TopNav/TopNav.js";
 import ReactDOM from 'react-dom';
 import './LogReg.scss';
 import { Switch, Route, Link} from 'react-router-dom';
