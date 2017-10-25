@@ -6,19 +6,20 @@ import Form from "./Form/Form.js";
 
 
 class CharacterInfo extends Component {
-    constructor(props) {
-    	super(props);
-    	this.state = {
-			charName: "",
-			initBonus: 0,
-			dexterity: 0,
-			hitPoints: 0,
-			conditions: ""
-		};
-  
-	  this.handleInputChange = this.handleInputChange.bind(this);
-	  this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    // constructor(props) {
+    // 	super(props);  
+	//   this.handleInputChange = this.handleInputChange.bind(this);
+	//   this.handleFormSubmit = this.handleFormSubmit.bind(this);
+	// }
+
+	state = {
+		charName: "",
+		initBonus: 0,
+		dexterity: 0,
+		hitPoints: 0,
+		conditions: ""
 	}
+
 	
 	// componentDidMount() {
 	// 	this.searchGames();
@@ -65,6 +66,8 @@ class CharacterInfo extends Component {
 	handleFormSubmit = event => {
 		// Preventing the default behavior of the form submit (which is to refresh the page)
 		event.preventDefault();
+		alert("I'm about to redirect");
+		window.location = "/dashboard";
 	};
 
     render() {
@@ -85,6 +88,13 @@ class CharacterInfo extends Component {
 									handleInputChange={this.handleInputChange}
 									handleFormSubmit={this.handleFormSubmit}
 								/>
+								<form>
+									<label>
+										Create New Game:
+										<input size="100%" type="text" value={this.state.value} onChange={this.handleChange} />
+									</label>
+								</form>
+
 							</div>
 						</div>
 					</div>
