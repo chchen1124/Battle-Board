@@ -1,5 +1,5 @@
 {
-  "name": "create-react-express-app",
+  "name": "battle-board-app",
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
@@ -21,12 +21,20 @@
     "axios": "^0.17.0",
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
-    "mongoose": "^4.12.3",
+    "mongoose": "^4.12.4",
     "morgan": "^1.9.0",
     "mysql": "^2.15.0",
     "mysql2": "^1.4.2",
     "node-sass-chokidar": "0.0.3",
     "react-router-dom": "^4.2.2",
-    "sequelize": "^4.15.2"
-  }
+    "sequelize": "^4.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chchen1124/Battle-Board.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chchen1124/Battle-Board/issues"
+  },
+  "homepage": "https://github.com/chchen1124/Battle-Board#readme"
 }

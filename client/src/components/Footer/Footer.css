@@ -1,0 +1,15 @@
+form {
+	font-family: 'Helvetica';
+	font-size: 30px;
+}
+
+h1 {
+	font-size: 80%;
+	color:red;
+	padding-bottom: 15px;
+}
+
+button {
+	color:green;
+	margin: 14px;
+} 
